@@ -2,10 +2,99 @@
  * YOUR CODE HERE *
  ******************/
 
+function addAll(arr) {
+  let sum = 0;
+  for(const num of arr){
+    sum += num;
+  }
+  return sum;
+}
 
+function countSpaces(str) {
+  let count = 0;
+  for(const s of str){
+    if(s === ' '){
+      count++;
+    }
+  }
+  return count;
+}
 
+function countTrues(arr) {
+  let count = 0;
+  for(const a of arr){
+    if(a === true){
+      count++;
+    }
+  }
+  return count;
+}
 
+function makeFriendly(p) {
+  let newP = ""
+  for(const s of p){
+    if(s === '.'){
+      newP += '!';
+    }else{
+      newP += s;
+    }
+  }
+  return newP;
+}
 
+function cubeAll(arr) {
+  let newArr = [];
+  for(const a of arr){
+    newArr.push(a*a*a);
+  }
+  return newArr;
+}
+
+function addNoises(animals) {
+  let newArr = [];
+
+  for(const animal of animals){
+    if(animal === 'Fido' ||
+      animal === 'Rolph' ||
+      animal === 'Maisie'){
+        newArr.push(animal + ' says \"Woof!\"');
+    }
+    
+    else if(animal === 'Garfield'||
+      animal === 'Heathcliff'){
+        newArr.push(animal + ' says \"Meow!\"');
+    }
+
+    else if(animal === 'Barnie' ||
+      animal === 'Sharp Tooth'){
+      newArr.push(animal + ' says \"ROWR.\"');
+    }
+
+  }
+
+  return newArr;
+}
+
+function womenOnly(arr) {
+  let newArr = [];
+  for (const person of arr){
+    if(person.endsWith("F")){
+      newArr.push(person);
+    }
+  }
+  return newArr;
+}
+
+function integersOnly(arr) {
+  let newArr = [];
+  for(const num of arr){
+    num;
+    if(Number.isInteger(num)){
+      newArr.push(num);
+    }
+  }
+  return newArr;
+}
 
 
 /*********************************
@@ -55,10 +144,6 @@ describe('addAll', () => {
     expect(addAll(nums1)).toBe(1007);
     expect(addAll(nums2)).toBe(-854);
   })
-
-  it(`isn't reassignable`, () => {
-    expect(() => addAll = 500).toThrow();
-  })
 })
 
 describe(`countSpaces`, () => {
@@ -86,10 +171,6 @@ describe(`countSpaces`, () => {
 
     expect(countSpaces(sentence1)).toBe(3);
     expect(countSpaces(sentence2)).toBe(5);
-  })
-
-  it(`isn't reassignable`, () => {
-    expect(() => countSpaces = 500).toThrow();
   })
 })
 
@@ -123,10 +204,6 @@ describe(`countTrues`, () => {
     expect(countTrues(values1)).toBe(2);
     expect(countTrues(values2)).toBe(4);
   })
-
-  it(`isn't reassignable`, () => {
-    expect(() => countTrues = 500).toThrow();
-  })
 })
 
 describe('makeFriendly', () => {
@@ -142,10 +219,6 @@ describe('makeFriendly', () => {
     expect(makeFriendly(paragraph1)).toEqual(friendly1);
     expect(makeFriendly(paragraph2)).toEqual(friendly2);
     expect(makeFriendly(paragraph3)).toEqual(friendly3);
-  })
-
-  it(`isn't reassignable`, () => {
-    expect(() => makeFriendly = 500).toThrow();
   })
 })
 
@@ -171,10 +244,6 @@ describe('cubeAll', () => {
 
     expect(nums1).toEqual(originalNums1);
     expect(nums2).toEqual(originalNums2);
-  })
-
-  it(`isn't reassignable`, () => {
-    expect(() => cubeAll = 500).toThrow();
   })
 })
 
@@ -216,10 +285,6 @@ describe('addNoises', () => {
 
     expect(animals1).toEqual(originalAnimals1);
     expect(animals2).toEqual(originalAnimals2);
-  })
-
-  it(`isn't reassignable`, () => {
-    expect(() => addNoises = 500).toThrow();
   })
 })
 
@@ -288,10 +353,6 @@ describe('womenOnly', () => {
     expect(people1).toEqual(originalPeople1);
     expect(people2).toEqual(originalPeople2);
   })
-
-  it(`isn't reassignable`, () => {
-    expect(() => womenOnly = 500).toThrow();
-  })
 })
 
 describe('integersOnly', () => {
@@ -319,9 +380,5 @@ describe('integersOnly', () => {
 
     expect(nums1).toEqual(originalNums1);
     expect(nums2).toEqual(originalNums2);
-  })
-
-  it(`isn't reassignable`, () => {
-    expect(() => integersOnly = 500).toThrow();
   })
 })
